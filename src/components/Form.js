@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
-export default class Form extends Component {
+export default class extends Component {
   state = { name: "", phone: "", date_of_birth: "", roles: "" };
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -10,38 +10,37 @@ export default class Form extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
-        <section class="Boiler">
+        <section className="Boiler">
           <form onSubmit={this.handleSubmit}>
-            <label for="name" class="label">
+            <label htmlFor="name" className="label">
               Name
             </label>
             <input
               type="text"
               name="name"
               placeholder="Enter your Name"
-              class="form-width"
+              className="form-width"
               onChange={this.handleChange}
             />
             <br />
 
-            <label for="phone" class="label">
+            <label htmlFor="phone" className="label">
               Date Of Birth
             </label>
             <input
               type="date"
               name="date_of_birth"
               placeholder="Enter your DOB"
-              class="form-width"
+              className="form-width"
               onChange={this.handleChange}
             />
             <br />
-            <label for="phone" class="label">
+            <label htmlFor="phone" className="label">
               Phone
             </label>
-            <div class="form-width" style={{ display: "flex" }}>
+            <div className="form-width" style={{ display: "flex" }}>
               <input value="+977" disabled style={{ width: "30px" }} />
               <input
                 type="number"
@@ -53,11 +52,11 @@ export default class Form extends Component {
             </div>
             <br />
 
-            <label for="role" class="label">
+            <label htmlFor="role" className="label">
               Role
             </label>
             <br />
-            <select name="roles" class="roles" onChange={this.handleChange}>
+            <select name="roles" className="roles" onChange={this.handleChange}>
               <option value="customer">Customer</option>
               <option value="admin">Admin</option>
               <option value="user">User</option>
